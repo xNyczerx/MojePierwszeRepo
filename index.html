@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punktacja Drużyn</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      #scoreA,
+      #scoreB {
+        font-size: 24px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Punktacja Drużyn</h1>
+
+    <button
+      id="teamAButton"
+      onclick="addPoint('A', 1)"
+      style="background-color: red"
+    >
+      Dodaj punkt dla Drużyny A
+    </button>
+    <button
+      id="teamBButton"
+      onclick="addPoint('B', 1)"
+      style="background-color: green"
+    >
+      Dodaj punkt dla Drużyny B
+    </button>
+
+    <h2>Wynik:</h2>
+    <p>Drużyna A: <span id="scoreA">0</span></p>
+    <p>Drużyna B: <span id="scoreB">0</span></p>
+
+    <script>
+      let scoreA = 0;
+      let scoreB = 0;
+
+      function addPoint(team, points) {
+        if (team === "A") {
+          scoreA += points;
+          document.getElementById("scoreA").innerText = scoreA;
+        } else if (team === "B") {
+          scoreB += points;
+          document.getElementById("scoreB").innerText = scoreB;
+        }
+      }
+    </script>
+  </body>
+</html>
